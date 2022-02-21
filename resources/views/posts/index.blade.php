@@ -42,7 +42,7 @@
                             <h3 class="post-subtitle">{{ $post->body }}</h3>
                         </a>
                         <p class="post-meta">
-                            Posted by {{ $post->author->name }} On <a href="#!">{{ $post->created_at->format('d-m-Y H:i') }}
+                            Posted by {{ $post->author->name ?? 'Unnamed Author'}} On <a href="#!">{{ $post->created_at->format('d-m-Y H:i') }}
                         </p>
                     </div>
                     <!-- Divider-->
