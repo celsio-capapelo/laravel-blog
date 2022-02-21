@@ -8,7 +8,9 @@ use App\Models\Post;
 class PostsController extends Controller
 {
     public function index() {
-        $posts = Post::all();
+        \Illuminate\Support\Facades\DB::listen(function($query) { logger($query->sql); });
+
+        $posts = Post::with('author')->get(); 
 
         return view('posts.index', ['posts' => $posts]);
     }
